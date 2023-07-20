@@ -5,8 +5,7 @@ using UnityEngine;
 public class PlayerInventory : MonoBehaviour
 {
     public int NumberOfCoins { get; private set; }
-
-    
+ 
     void Start()
     {
         

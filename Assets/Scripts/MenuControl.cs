@@ -8,11 +8,7 @@ public class MenuControl : MonoBehaviour
 
     public string Level1;
 
-   // public void GoNextScene()
-    //{
-   //  SceneManager.LoadScene(Level1);
-  //  }
-
+   
     void Start()
     {
         

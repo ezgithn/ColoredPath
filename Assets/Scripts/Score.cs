@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,32 +6,27 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
+    [SerializeField] 
+    private Text ScoreText;
+    private int _scoreNum;
 
-    public Text ScoreText;
-    private int ScoreNum;
-
-
-    void Start()
+    private void Awake()
     {
-        ScoreNum = 0;
-        ScoreText.text = "MyCoin " + ScoreNum;
-
+        SetText();
     }
 
-    
-    void Update()
+    private void SetText()
     {
-        
+        ScoreText.text = "MyCoin " + _scoreNum;
     }
 
     private void OnTriggerEnter(Collider Coin)
     {
-        if(Coin.tag == "CollectCoin")
+        if(Coin.CompareTag("CollectCoin"))
         {
-            ScoreNum += 1;
+            _scoreNum += 1;
             Destroy(Coin.gameObject);
-            ScoreText.text = "MyCoin" + ScoreNum;
+            SetText();
         }
     }
-
 }

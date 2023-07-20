@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class Collectibles : MonoBehaviour
 {
+    private float _theScore;
 
-    private float theScore;
-
+    [SerializeField]
     public float turnSpeed = 30f;
     public float destroyDelay = 0.5f; 
     public GameObject destroyEffect;
-
-
+    
     private void Start()
     {
 
@@ -20,7 +19,7 @@ public class Collectibles : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         PlayerInventory playerInventory = other.GetComponent<PlayerInventory>();
-        theScore += 36;
+        _theScore += 36;
 
         if (playerInventory != null)
         {
@@ -32,7 +31,6 @@ public class Collectibles : MonoBehaviour
         {
             return;
         }
-
     }
 
     public void Destroy()
@@ -41,7 +39,6 @@ public class Collectibles : MonoBehaviour
         {
             Instantiate(destroyEffect, transform.position, transform.rotation);
         }
-
         Destroy(gameObject, destroyDelay); 
     }
 
@@ -49,5 +46,4 @@ public class Collectibles : MonoBehaviour
     {
         transform.Rotate(0.6f, 0.2f, turnSpeed * Time.deltaTime);
     }
-
 }
