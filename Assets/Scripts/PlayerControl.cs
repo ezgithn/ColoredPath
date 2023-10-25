@@ -114,12 +114,7 @@ public class PlayerControl : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        
-        
-    }
-
+   
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
