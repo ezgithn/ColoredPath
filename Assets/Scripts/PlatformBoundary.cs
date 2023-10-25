@@ -9,20 +9,10 @@ public class PlatformBoundary : MonoBehaviour
     
 
 
-
     void Start()
     {
 
     }
 
-    void FixedUpdate()
-    {
-        
-
-    }
-    
-    void Update()
-    {
-       
-    }
+   
 }
