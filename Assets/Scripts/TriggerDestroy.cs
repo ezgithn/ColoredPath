@@ -18,13 +18,5 @@ public class TriggerDestroy : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
+  
 }
